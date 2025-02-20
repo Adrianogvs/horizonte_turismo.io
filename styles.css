@@ -185,7 +185,22 @@ table th {
 /* Botão do GitHub (CTA) */
 .github-link {
   display: inline-block;
-  padding: 15px 30px;
+  padding: 5px 30px;
+  background: var(--secondary-color);
+  color: var(--white);
+  text-decoration: none;
+  border-radius: 50px;
+  transition: background 0.3s ease, transform 0.3s ease;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  animation: float 3s ease-in-out infinite;
+}
+
+
+/* Botão do Streamlit (CTA) */
+.streamlit-link {
+  display: inline-block;
+  padding: 5px 30px;
   background: var(--secondary-color);
   color: var(--white);
   text-decoration: none;
