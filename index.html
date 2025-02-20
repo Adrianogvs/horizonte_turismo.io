@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema de Gestão de Viagem - Horizonte Turismo</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Fonte moderna -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Navbar para navegar entre as seções -->
+  <nav class="navbar">
+    <div class="container nav-container">
+      <ul>
+        <li><a href="#intro">Início</a></li>
+        <li><a href="#funcionalidades">Funcionalidades</a></li>
+        <li><a href="#estrutura-dados">Estrutura</a></li>
+        <li><a href="#beneficios">Benefícios</a></li>
+        <li><a href="#pos-login">Demonstração do Sistema</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header>
+    <div class="hero">
+      <img src="assets/image.png" alt="Horizonte Turismo" class="hero-img">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h1>Horizonte Turismo</h1>
+        <p>Sistema de Gestão de Viagem</p>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Seção de Introdução -->
+    <section class="intro" id="intro">
+      <div class="container">
+        <h2>Bem-vindo ao Sistema de Gestão de Viagem</h2>
+        <p>
+          Este repositório contém o <strong>Sistema de Gestão de Viagem</strong>, desenvolvido com 
+          <strong>Streamlit</strong>, <strong>SQLite3</strong>, <strong>pandas</strong> e <strong>Altair</strong>.
+          Gerencie suas viagens de forma eficiente com registros detalhados de carros, motoristas, origens, destinos e custos.
+        </p>
+      </div>
+    </section>  
+
+    <!-- Seção de Funcionalidades -->
+    <section class="features" id="funcionalidades">
+      <div class="container">
+        <h2>🛠️ Funcionalidades</h2>
+        <ul>
+          <li><strong>Cadastro de Viagens:</strong> Registra informações como origem, destino, carro utilizado e quilometragem.</li>
+          <li><strong>Controle de Combustível:</strong> Registra consumo e valores de Óleo Diesel S10 e S500.</li>
+          <li><strong>Gestão de Custos:</strong> Armazena valores de pedágios, diárias e despesas extras.</li>
+          <li><strong>Monitoramento de Datas:</strong> Controle de datas de saída e retorno.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Seção de Estrutura dos Dados -->
+    <section class="data-structure" id="estrutura-dados">
+      <div class="container">
+        <h2>📄 Estrutura dos Dados</h2>
+        <p>A planilha contém os seguintes campos:</p>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Campo</th>
+                <th>Descrição</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Origem / Destino</strong></td>
+                <td>Local de saída e chegada da viagem.</td>
+              </tr>
+              <tr>
+                <td><strong>Carro</strong></td>
+                <td>Veículo utilizado na viagem.</td>
+              </tr>
+              <tr>
+                <td><strong>K-Saída / K-Chegada</strong></td>
+                <td>Quilometragem inicial e final.</td>
+              </tr>
+              <tr>
+                <td><strong>Total</strong></td>
+                <td>Quilometragem percorrida.</td>
+              </tr>
+              <tr>
+                <td><strong>Data da Saída / Data da Volta</strong></td>
+                <td>Período da viagem.</td>
+              </tr>
+              <tr>
+                <td><strong>Óleo Diesel S10 / S500</strong></td>
+                <td>Consumo e valor total.</td>
+              </tr>
+              <tr>
+                <td><strong>Pedágio</strong></td>
+                <td>Valor total de pedágios.</td>
+              </tr>
+              <tr>
+                <td><strong>Diária do Motorista</strong></td>
+                <td>Custo diário do motorista.</td>
+              </tr>
+              <tr>
+                <td><strong>Despesa Extra</strong></td>
+                <td>Outras despesas associadas à viagem.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção de Benefícios -->
+    <section class="benefits" id="beneficios">
+      <div class="container">
+        <h2>📈 Benefícios</h2>
+        <ul>
+          <li>✅ Facilidade no acompanhamento dos custos das viagens.</li>
+          <li>✅ Controle preciso do consumo de combustível.</li>
+          <li>✅ Gestão eficiente da frota e motoristas.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Seção: Demonstração do Sistema (Pós-Login) -->
+    <section id="pos-login" class="demo-section">
+      <div class="container">
+        <h2>Demonstração do Sistema (Pós-Login)</h2>
+        <p>Em seguida, você terá acesso a uma demonstração do sistema utilizando as credenciais pré-definidas. Para facilitar a visualização, clique na imagem para ampliá-la e, se desejar, clique novamente para recolhê-la. Apresentamos, a seguir, as principais telas do sistema após a autenticação, permitindo que você explore suas funcionalidades em ação.</p>
+        
+        <!-- Grid de imagens/telas (2 colunas) -->
+        <div class="screenshots-grid">
+          <!-- Card 1 -->
+          <div class="screenshot-card">
+            <img src="assets/image3.png" alt="Tela 1: Cadastro de Nova Viagem">
+            <h3>Tela 1: Cadastro de Nova Viagem</h3>
+            <p>Nesta tela, é possível inserir os dados da viagem (origem, destino, quilometragem, datas, custos etc.).</p>
+          </div>
+          <!-- Card 2 -->
+          <div class="screenshot-card">
+            <img src="assets/image4.png" alt="Tela 2: Viagens Registradas">
+            <h3>Tela 2: Viagens Registradas</h3>
+            <p>Lista completa das viagens já cadastradas, com filtros para ano, origem, destino e motorista.</p>
+          </div>
+          <!-- Card 3 -->
+          <div class="screenshot-card">
+            <img src="assets/image5.png" alt="Tela 3: Gráficos de Viagens - Linha">
+            <h3>Tela 3: Gráficos de Viagens (Linha)</h3>
+            <p>Exibe a evolução das viagens ao longo do tempo, quilometragem total, custos, entre outros indicadores.</p>
+          </div>
+          <!-- Card 4 -->
+          <div class="screenshot-card">
+            <img src="assets/image6.png" alt="Tela 4: Gráficos de Viagens - Pizza">
+            <h3>Tela 4: Gráficos de Viagens (Pizza)</h3>
+            <p>Permite analisar a distribuição de custos ou tipos de viagem através de um gráfico de pizza.</p>
+          </div>
+          <!-- Card 5 -->
+          <div class="screenshot-card">
+            <img src="assets/image7.png" alt="Tela 5: Gráficos de Viagens - Dispersão">
+            <h3>Tela 5: Gráficos de Viagens (Dispersão)</h3>
+            <p>Visualização para identificar correlações entre variáveis, como quilometragem e custos de viagem.</p>
+          </div>
+          <!-- Card 6 -->
+          <div class="screenshot-card">
+            <img src="assets/image8.png" alt="Tela 6: Gráficos de Viagens - Barras">
+            <h3>Tela 6: Gráficos de Viagens (Barras)</h3>
+            <p>Mostra a comparação de valores por categorias, como total percorrido, total gasto, entre outros.</p>
+          </div>
+          <!-- Card 7 -->
+          <div class="screenshot-card">
+            <img src="assets/image9.png" alt="Tela 7: Gráficos de Viagens - Área">
+            <h3>Tela 7: Gráficos de Viagens (Área)</h3>
+            <p>Aba para gerenciar os veículos disponíveis no sistema, permitindo adicionar, listar ou remover carros.</p>
+          </div>          
+          <!-- Card 8 -->
+          <div class="screenshot-card">
+            <img src="assets/image10.png" alt="Tela 7: Cadastro de Carros">
+            <h3>Tela 8: Cadastro de Carros</h3>
+            <p>Aba para gerenciar os veículos disponíveis no sistema, permitindo adicionar, listar ou remover carros.</p>
+          </div>
+          <!-- Card 9 -->
+          <div class="screenshot-card">
+            <img src="assets/image11.png" alt="Tela 8: Cadastro de Origem">
+            <h3>Tela 9: Cadastro de Origem</h3>
+            <p>Utilize esta tela para cadastrar endereços de origem, facilitando o preenchimento das viagens.</p>
+          </div>
+          <!-- Card 10 -->
+          <div class="screenshot-card">
+            <img src="assets/image12.png" alt="Tela 9: Cadastro de Tipos de Óleo">
+            <h3>Tela 10: Cadastro de Tipos de Óleo</h3>
+            <p>Gerencia os diferentes tipos de óleo diesel, permitindo atualizar preços e registrar consumo.</p>
+          </div>
+          <!-- Card 11 -->
+          <div class="screenshot-card">
+            <img src="assets/image13.png" alt="Tela 9: Cadastro de Tipos de Óleo">
+            <h3>Tela 11: Cadastro de Tipos de Óleo</h3>
+            <p>Gerencia os diferentes tipos de óleo diesel, permitindo atualizar preços e registrar consumo.</p>
+          </div>   
+          <!-- Card 12 -->
+          <div class="screenshot-card">
+            <img src="assets/image13.png" alt="Tela 9: Cadastro de Tipos de Óleo">
+            <h3>Tela 12: Cadastro de Tipos de Óleo</h3>
+            <p>Gerencia os diferentes tipos de óleo diesel, permitindo atualizar preços e registrar consumo.</p>
+          </div>                 
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Seção CTA -->
+  <div class="container">
+    <a href="https://github.com/Adrianogvs/horizonte_turismo" target="_blank" class="github-link">
+      Visite meu repositório no GitHub
+    </a>
+  </div>
+
+  <footer>
+    <div class="container">
+      <p>
+        Projeto desenvolvido por <a href="https://adrianogvs.com.br/" target="_blank">Adriano Vilela</a>
+      </p>
+      <p>
+        Contate-me: <a href="https://www.linkedin.com/in/adrianogvs/" target="_blank">LinkedIn</a> | 
+        <a href="mailto:dataengineer@adrianogvs.com.br">Email</a>
+      </p>
+      <p>&copy; Todos os direitos reservados a Adrianogvs</p>
+    </div>
+  </footer>
+
+  <!-- Botão para voltar ao topo -->
+  <button id="scrollTopBtn" title="Voltar ao Topo">▲</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
