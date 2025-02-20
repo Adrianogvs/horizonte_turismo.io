@@ -21,5 +21,4 @@ document.addEventListener('DOMContentLoaded', () => {
         img.classList.toggle('fullscreen');
       });
     });
-  });
-  
+});

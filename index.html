@@ -18,10 +18,15 @@
         <li><a href="#estrutura-dados">Estrutura</a></li>
         <li><a href="#beneficios">Benefícios</a></li>
         <li><a href="#pos-login">Demonstração do Sistema</a></li>
+        <li><a href="#portfolio">Visite meu repositório</a></li>
       </ul>
     </div>
   </nav>
 
+  body {
+    padding-top: 70px; /* Ajuste o valor conforme a altura da navbar */
+  }
+  
   <header>
     <div class="hero">
       <img src="assets/image.png" alt="Horizonte Turismo" class="hero-img">
@@ -34,8 +39,8 @@
   </header>
 
   <main>
-    <!-- Seção de Introdução -->
-    <section class="intro" id="intro">
+    <!-- Bloco de Introdução -->
+    <div class="section intro" id="intro">
       <div class="container">
         <h2>Bem-vindo ao Sistema de Gestão de Viagem</h2>
         <p>
@@ -44,10 +49,10 @@
           Gerencie suas viagens de forma eficiente com registros detalhados de carros, motoristas, origens, destinos e custos.
         </p>
       </div>
-    </section>  
+    </div>  
 
-    <!-- Seção de Funcionalidades -->
-    <section class="features" id="funcionalidades">
+    <!-- Bloco de Funcionalidades -->
+    <div class="section features" id="funcionalidades">
       <div class="container">
         <h2>🛠️ Funcionalidades</h2>
         <ul>
@@ -57,10 +62,10 @@
           <li><strong>Monitoramento de Datas:</strong> Controle de datas de saída e retorno.</li>
         </ul>
       </div>
-    </section>
+    </div>
 
-    <!-- Seção de Estrutura dos Dados -->
-    <section class="data-structure" id="estrutura-dados">
+    <!-- Bloco de Estrutura dos Dados -->
+    <div class="section data-structure" id="estrutura-dados">
       <div class="container">
         <h2>📄 Estrutura dos Dados</h2>
         <p>A planilha contém os seguintes campos:</p>
@@ -113,10 +118,10 @@
           </table>
         </div>
       </div>
-    </section>
+    </div>
 
-    <!-- Seção de Benefícios -->
-    <section class="benefits" id="beneficios">
+    <!-- Bloco de Benefícios -->
+    <div class="section benefits" id="beneficios">
       <div class="container">
         <h2>📈 Benefícios</h2>
         <ul>
@@ -125,13 +130,15 @@
           <li>✅ Gestão eficiente da frota e motoristas.</li>
         </ul>
       </div>
-    </section>
+    </div>
 
-    <!-- Seção: Demonstração do Sistema (Pós-Login) -->
-    <section id="pos-login" class="demo-section">
+    <!-- Bloco: Demonstração do Sistema (Pós-Login) -->
+    <div class="section demo-section" id="pos-login">
       <div class="container">
         <h2>Demonstração do Sistema (Pós-Login)</h2>
-        <p>Em seguida, você terá acesso a uma demonstração do sistema utilizando as credenciais pré-definidas. Para facilitar a visualização, clique na imagem para ampliá-la e, se desejar, clique novamente para recolhê-la. Apresentamos, a seguir, as principais telas do sistema após a autenticação, permitindo que você explore suas funcionalidades em ação.</p>
+        <p>
+          Em seguida, você terá acesso a uma demonstração do sistema utilizando as credenciais pré-definidas. Para facilitar a visualização, clique na imagem para ampliá-la e, se desejar, clique novamente para recolhê-la. Apresentamos, a seguir, as principais telas do sistema após a autenticação, permitindo que você explore suas funcionalidades em ação.
+        </p>
         
         <!-- Grid de imagens/telas (2 colunas) -->
         <div class="screenshots-grid">
@@ -179,44 +186,46 @@
           </div>          
           <!-- Card 8 -->
           <div class="screenshot-card">
-            <img src="assets/image10.png" alt="Tela 7: Cadastro de Carros">
+            <img src="assets/image10.png" alt="Tela 8: Cadastro de Carros">
             <h3>Tela 8: Cadastro de Carros</h3>
             <p>Aba para gerenciar os veículos disponíveis no sistema, permitindo adicionar, listar ou remover carros.</p>
           </div>
           <!-- Card 9 -->
           <div class="screenshot-card">
-            <img src="assets/image11.png" alt="Tela 8: Cadastro de Origem">
+            <img src="assets/image11.png" alt="Tela 9: Cadastro de Origem">
             <h3>Tela 9: Cadastro de Origem</h3>
             <p>Utilize esta tela para cadastrar endereços de origem, facilitando o preenchimento das viagens.</p>
           </div>
           <!-- Card 10 -->
           <div class="screenshot-card">
-            <img src="assets/image12.png" alt="Tela 9: Cadastro de Tipos de Óleo">
+            <img src="assets/image12.png" alt="Tela 10: Cadastro de Tipos de Óleo">
             <h3>Tela 10: Cadastro de Tipos de Óleo</h3>
             <p>Gerencia os diferentes tipos de óleo diesel, permitindo atualizar preços e registrar consumo.</p>
           </div>
           <!-- Card 11 -->
           <div class="screenshot-card">
-            <img src="assets/image13.png" alt="Tela 9: Cadastro de Tipos de Óleo">
+            <img src="assets/image13.png" alt="Tela 11: Cadastro de Tipos de Óleo">
             <h3>Tela 11: Cadastro de Tipos de Óleo</h3>
             <p>Gerencia os diferentes tipos de óleo diesel, permitindo atualizar preços e registrar consumo.</p>
           </div>   
           <!-- Card 12 -->
           <div class="screenshot-card">
-            <img src="assets/image13.png" alt="Tela 9: Cadastro de Tipos de Óleo">
+            <img src="assets/image13.png" alt="Tela 12: Cadastro de Tipos de Óleo">
             <h3>Tela 12: Cadastro de Tipos de Óleo</h3>
             <p>Gerencia os diferentes tipos de óleo diesel, permitindo atualizar preços e registrar consumo.</p>
           </div>                 
         </div>
       </div>
-    </section>
+    </div>
   </main>
 
-  <!-- Seção CTA -->
-  <div class="container">
-    <a href="https://github.com/Adrianogvs/horizonte_turismo" target="_blank" class="github-link">
-      Visite meu repositório no GitHub
-    </a>
+  <!-- Bloco CTA -->
+  <div class="portfolio" id="portfolio">
+    <div class="container">
+      <a href="https://github.com/Adrianogvs/horizonte_turismo" target="_blank" class="github-link">
+        Visite meu repositório no GitHub
+      </a>
+    </div>
   </div>
 
   <footer>

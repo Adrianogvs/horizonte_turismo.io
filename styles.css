@@ -105,17 +105,17 @@ header {
   margin: 0;
 }
 
-/* Seções principais */
-main section {
+/* Blocos principais (antigos sections) */
+main .section {
   padding: 60px 0;
 }
 
-section.intro,
-section.features,
-section.data-structure,
-section.benefits,
-section.cta,
-section.demo-section {
+.section.intro,
+.section.features,
+.section.data-structure,
+.section.benefits,
+.section.cta,
+.section.demo-section {
   background: #2c2c2c; 
   margin-bottom: 40px;
   border-radius: 10px;
@@ -213,7 +213,7 @@ table th {
   transform: translateY(-8px);
 }
 
-/* Seção de Demonstração (Pós-Login) */
+/* Bloco de Demonstração (Pós-Login) */
 .demo-section {
   text-align: center;
 }
@@ -330,4 +330,13 @@ footer a:hover {
   .screenshots-grid {
     grid-template-columns: 1fr;
   }
+}
+.navbar {
+  position: fixed; /* Fixa o elemento na tela */
+  top: 0;        /* Posiciona no topo */
+  left: 0;       /* Alinha à esquerda */
+  width: 100%;   /* Ocupa a largura total */
+  z-index: 1000; /* Garante que fique acima dos demais elementos */
+  background-color: #121212; /* Garante o fundo, se necessário */
+  padding: 10px 0; /* Espaçamento interno */
 }
