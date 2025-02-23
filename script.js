@@ -1,30 +1,61 @@
 document.addEventListener('DOMContentLoaded', () => {
+  /*************************************************
+   * 1. BOTÃO "VOLTAR AO TOPO" (scrollTopBtn)
+   *************************************************/
+  const scrollTopBtn = document.getElementById('scrollTopBtn');
+  if (scrollTopBtn) {
+    // Mostra/esconde o botão de scroll ao rolar a página
+    window.addEventListener('scroll', () => {
+      scrollTopBtn.style.display = window.pageYOffset > 300 ? 'flex' : 'none';
+    });
+    // Ao clicar, sobe suavemente
+    scrollTopBtn.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  }
 
-  // Cria uma função para lidar com a lógica do menu mobile x desktop
+  /*************************************************
+   * 2. EXPANDIR/RECOLHER IMAGENS AO CLICAR (fullscreen)
+   *************************************************/
+  const cards = document.querySelectorAll('.screenshot-card');
+  cards.forEach(card => {
+    const img = card.querySelector('img');
+    card.addEventListener('click', () => {
+      img.classList.toggle('fullscreen'); // adiciona/remove a classe .fullscreen
+    });
+  });
+
+  /*************************************************
+   * 3. MENU HAMBURGER SOMENTE PARA MOBILE
+   *************************************************/
   function handleMobileMenu() {
-    // Seleciona o menu atual
+    // Define a largura máxima que você considera "mobile"
+    const mobileMaxWidth = 768;
+
+    // Seleciona o menu original
     const navContainer = document.querySelector('.nav-container');
 
-    // Seleciona (se existirem) os elementos mobile que vamos criar
+    // Tenta selecionar (caso já tenha sido criado) os elementos do menu mobile
     let mobileHeader = document.querySelector('#mobile-header');
     let mobileMenu   = document.querySelector('#mobile-menu');
     let hamburger    = document.querySelector('#mobile-hamburger');
 
-    // Verifica se a tela está em "modo mobile"
-    if (window.innerWidth <= 768) {
-      // -------- MODO MOBILE --------
+    if (window.innerWidth <= mobileMaxWidth) {
+      // =========== MODO MOBILE ===========
 
       // 1) Esconde o menu original
       if (navContainer) {
         navContainer.style.display = 'none';
       }
 
-      // 2) Se o cabeçalho mobile ainda não existe, cria tudo
+      // 2) Se ainda não existe o cabeçalho mobile, cria agora
       if (!mobileHeader) {
-        // Cabeçalho fixo no topo
         mobileHeader = document.createElement('div');
         mobileHeader.id = 'mobile-header';
-        // Inline styles para não mexer no CSS
+        // Estilos inline para não mexer no CSS
         mobileHeader.style.position = 'fixed';
         mobileHeader.style.top = '0';
         mobileHeader.style.left = '0';
@@ -37,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
         mobileHeader.style.padding = '0 20px';
         mobileHeader.style.zIndex = '9999';
 
-        // Título à esquerda
+        // Texto "Horizonte Turismo" à esquerda
         const mobileTitle = document.createElement('span');
         mobileTitle.textContent = 'Horizonte Turismo';
         mobileTitle.style.color = '#fff';
@@ -65,37 +96,36 @@ document.addEventListener('DOMContentLoaded', () => {
           hamburger.appendChild(bar);
         }
 
-        // Monta o header
+        // Monta o header mobile
         mobileHeader.appendChild(mobileTitle);
         mobileHeader.appendChild(hamburger);
-
-        // Adiciona ao body
         document.body.appendChild(mobileHeader);
       }
 
-      // 3) Se o menu dropdown mobile não existe, cria
+      // 3) Se o dropdown do menu mobile ainda não existe, cria agora
       if (!mobileMenu) {
         mobileMenu = document.createElement('div');
         mobileMenu.id = 'mobile-menu';
         mobileMenu.style.position = 'fixed';
-        mobileMenu.style.top = '60px'; // abaixo do header
+        mobileMenu.style.top = '60px';
         mobileMenu.style.right = '0';
         mobileMenu.style.backgroundColor = '#333';
         mobileMenu.style.padding = '20px';
-        mobileMenu.style.borderRadius = '5px 0 0 5px'; // arredonda canto esquerdo
-        mobileMenu.style.display = 'none'; // inicia escondido
+        mobileMenu.style.borderRadius = '5px 0 0 5px';
+        mobileMenu.style.display = 'none';
         mobileMenu.style.zIndex = '9998';
 
-        // Itens do menu (mesmos do seu nav original)
+        // Mesmos links do menu original
         const menuItems = [
           { text: 'Início',                href: '#intro' },
           { text: 'Funcionalidades',       href: '#funcionalidades' },
-          { text: 'Estrutura',            href: '#estrutura-dados' },
-          { text: 'Benefícios',           href: '#beneficios' },
+          { text: 'Estrutura',             href: '#estrutura-dados' },
+          { text: 'Benefícios',            href: '#beneficios' },
           { text: 'Demonstração do Sistema', href: '#pos-login' },
-          { text: 'Acesso ao Sistema',    href: 'https://horizonteturismo.streamlit.app/', external: true }
+          { text: 'Acesso ao Sistema',     href: 'https://horizonteturismo.streamlit.app/', external: true }
         ];
 
+        // Cria os links
         menuItems.forEach(item => {
           const link = document.createElement('a');
           link.textContent = item.text;
@@ -106,33 +136,30 @@ document.addEventListener('DOMContentLoaded', () => {
           link.style.textDecoration = 'none';
           link.style.fontSize = '1rem';
           if (item.external) {
-            link.target = '_blank'; // abre em nova aba
+            link.target = '_blank';
           }
           mobileMenu.appendChild(link);
         });
 
-        // Adiciona o menu dropdown ao body
         document.body.appendChild(mobileMenu);
       }
 
-      // 4) Controla o clique no hamburger
+      // 4) Ao clicar no hamburger, mostra/esconde o menu
       hamburger.onclick = () => {
-        if (mobileMenu.style.display === 'none') {
-          mobileMenu.style.display = 'block';
-        } else {
-          mobileMenu.style.display = 'none';
-        }
+        mobileMenu.style.display = (mobileMenu.style.display === 'none')
+          ? 'block'
+          : 'none';
       };
 
     } else {
-      // -------- MODO DESKTOP --------
+      // =========== MODO DESKTOP ===========
 
-      // 1) Mostra o menu original
+      // Mostra o menu original
       if (navContainer) {
         navContainer.style.display = '';
       }
 
-      // 2) Remove (se existir) o header e menu mobile
+      // Remove o header e menu mobile (se existirem)
       if (mobileHeader) {
         mobileHeader.remove();
       }
@@ -142,10 +169,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Executa a primeira checagem ao carregar a página
+  // Chama a função pela primeira vez
   handleMobileMenu();
 
-  // Se quiser que a troca ocorra ao redimensionar a janela,
-  // escute o evento "resize" e chame handleMobileMenu novamente.
+  // Se quiser alternar automaticamente ao redimensionar (sem dar refresh):
   window.addEventListener('resize', handleMobileMenu);
 });
