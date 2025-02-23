@@ -15,6 +15,11 @@
   --white: #fff;
 }
 
+/* Correção principal para âncoras com navbar fixa */
+html {
+  scroll-padding-top: 70px; /* Ajuste conforme a altura da navbar */
+}
+
 body {
   font-family: 'Roboto', sans-serif;
   background-color: var(--background-color);
@@ -32,7 +37,12 @@ body {
 
 /* Navbar */
 .navbar {
-  background-color: #121212;
+  position: fixed; /* Fixa o elemento na tela */
+  top: 0;        /* Posiciona no topo */
+  left: 0;       /* Alinha à esquerda */
+  width: 100%;   /* Ocupa a largura total */
+  z-index: 1000; /* Garante que fique acima dos demais elementos */
+  background-color: #121212; /* Fundo do menu fixo */
   padding: 10px 0;
 }
 
@@ -196,7 +206,6 @@ table th {
   animation: float 3s ease-in-out infinite;
 }
 
-
 /* Botão do Streamlit (CTA) */
 .streamlit-link {
   display: inline-block;
@@ -223,7 +232,8 @@ table th {
   }
 }
 
-.github-link:hover {
+.github-link:hover,
+.streamlit-link:hover {
   background: #e67e00;
   transform: translateY(-8px);
 }
@@ -345,13 +355,4 @@ footer a:hover {
   .screenshots-grid {
     grid-template-columns: 1fr;
   }
-}
-.navbar {
-  position: fixed; /* Fixa o elemento na tela */
-  top: 0;        /* Posiciona no topo */
-  left: 0;       /* Alinha à esquerda */
-  width: 100%;   /* Ocupa a largura total */
-  z-index: 1000; /* Garante que fique acima dos demais elementos */
-  background-color: #121212; /* Garante o fundo, se necessário */
-  padding: 10px 0; /* Espaçamento interno */
 }
